@@ -949,13 +949,13 @@ video {
 body {
   --tw-bg-opacity: 1;
   background-color: rgb(6 6 42 / var(--tw-bg-opacity));
-  font-family: --font-montserrat, sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .pretitle {
-  font-family: --font-alexBrush, sans-serif;
+  font-family: var(--font-alexBrush), sans-serif;
   font-size: 42px;
   line-height: 1;
   --tw-text-opacity: 1;
