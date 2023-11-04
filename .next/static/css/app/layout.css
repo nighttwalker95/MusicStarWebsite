@@ -939,8 +939,41 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media (min-width: 640px) {
+
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 960px) {
+
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1310px) {
+
+  .container {
+    max-width: 1310px;
+  }
+}
 .relative {
   position: relative;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 .overflow-x-hidden {
   overflow-x: hidden;
