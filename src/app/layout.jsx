@@ -21,7 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${alexBrush.variable} ${montserrat.variable}`}>
+      <body
+        className={`${alexBrush.variable} ${montserrat.variable} overflow-x-hidden relative`}
+      >
         {children}
       </body>
     </html>
