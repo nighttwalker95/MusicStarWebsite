@@ -30,7 +30,7 @@ body {
   @apply bg-accent text-white hover:bg-accent-hover;
 }
 
-.btn-accent {
+.btn-white {
   @apply bg-white text-primary hover:bg-white/80;
 }
 
