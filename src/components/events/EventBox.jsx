@@ -4,10 +4,17 @@ import Image from "next/image";
 import { RiMapPin2Fill } from "react-icons/ri";
 
 import { motion } from "framer-motion";
+import { fadeIn } from "../../../variants";
 
 const EventBox = ({ events }) => {
   return (
-    <div className=" bg-secondary/60 rounded-[10px] p-4 xl:p-12 relative">
+    <motion.div
+      variants={fadeIn("up", 0.4)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.3 }}
+      className=" bg-secondary/60 rounded-[10px] p-4 xl:p-12 relative"
+    >
       <div className=" flex flex-col xl:flex-row justify-between h-[620px] xl:h-full gap-x-4">
         {/* images */}
         <div className=" hidden xl:flex w-[400px]">
@@ -62,7 +69,7 @@ const EventBox = ({ events }) => {
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
