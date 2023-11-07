@@ -986,6 +986,9 @@ video {
 .z-30 {
   z-index: 30;
 }
+.z-40 {
+  z-index: 40;
+}
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -1001,6 +1004,22 @@ video {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -1029,6 +1048,9 @@ video {
 .h-\[101\.37px\] {
   height: 101.37px;
 }
+.h-\[112px\] {
+  height: 112px;
+}
 .h-\[120px\] {
   height: 120px;
 }
@@ -1043,6 +1065,9 @@ video {
 }
 .h-full {
   height: 100%;
+}
+.h-16 {
+  height: 4rem;
 }
 .min-h-\[60px\] {
   min-height: 60px;
@@ -1070,6 +1095,15 @@ video {
 }
 .w-\[80px\] {
   width: 80px;
+}
+.w-full {
+  width: 100%;
+}
+.w-16 {
+  width: 4rem;
+}
+.max-w-4xl {
+  max-width: 56rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -1118,12 +1152,27 @@ video {
 .bg-secondary\/60 {
   background-color: rgb(21 21 56 / 0.6);
 }
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+.from-tertiary\/70 {
+  --tw-gradient-from: rgb(36 36 69 / 0.7) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(36 36 69 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.to-primary\/10 {
+  --tw-gradient-to: rgb(6 6 42 / 0.1) var(--tw-gradient-to-position);
+}
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
 }
 .p-4 {
   padding: 1rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 .pb-10 {
   padding-bottom: 2.5rem;
@@ -1150,6 +1199,10 @@ video {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
 .font-black {
   font-weight: 900;
 }
@@ -1162,6 +1215,9 @@ video {
 .font-light {
   font-weight: 300;
 }
+.font-medium {
+  font-weight: 500;
+}
 .leading-none {
   line-height: 1;
 }
@@ -1172,11 +1228,20 @@ video {
   --tw-text-opacity: 1;
   color: rgb(127 28 252 / var(--tw-text-opacity));
 }
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
 .opacity-80 {
   opacity: 0.8;
 }
 .mix-blend-luminosity {
   mix-blend-mode: luminosity;
+}
+.backdrop-blur-\[15px\] {
+  --tw-backdrop-blur: blur(15px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 .scrollbar-thin {
   scrollbar-color: var(--scrollbar-thumb, initial) var(--scrollbar-track, initial);
@@ -1312,6 +1377,76 @@ body {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
+}
+
+/* main player */
+
+.rap-progress {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(101 25 200 / var(--tw-bg-opacity)) !important;
+}
+
+.rap-pin {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+}
+
+.rap-container .rap-slider .rap-progress .rap-pin {
+  height: 14px !important;
+  width: 14px !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+}
+
+.rap-container .rap-slider .rap-progress .rap-pin:hover {
+  --tw-scale-x: 1.2;
+  --tw-scale-y: 1.2;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.rap-container {
+  padding: 0px !important;
+}
+
+.rap-container .rap-pp-button svg {
+  width: 14px;
+}
+
+.rap-container .rap-volume .rap-volume-btn svg {
+  width: 22px;
+}
+
+.rap-container .rap-pp-button svg path,
+.rap-container .rap-volume .rap-volume-btn svg path {
+  fill: #7f1cfc;
+}
+
+.rap-current-time,
+.rap-total-time {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.rap-container .rap-slider {
+  height: 2px !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(51 51 91 / var(--tw-bg-opacity)) !important;
+}
+
+.rap-container .rap-controls span {
+  font-size: 15px;
+}
+
+.rap-volume-btn.rap-volume-open svg path {
+  fill: #fff;
+}
+
+.rap-volume-controls {
+  background-color: rgb(6 6 42 / 0.8) !important;
 }
 
 .before\:absolute::before {
