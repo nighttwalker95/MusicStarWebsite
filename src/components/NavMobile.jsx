@@ -1,5 +1,5 @@
 const NavMobile = () => {
-  return <div>NavMobile</div>;
+  return <nav className="xl:hidden">NavMobile</nav>;
 };
 
 export default NavMobile;
