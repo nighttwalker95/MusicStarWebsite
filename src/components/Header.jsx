@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed z-50 w-full ${
+      className={`fixed z-50 w-full transition-all ${
         active ? "bg-[#030315] py-6" : "bg-transparent py-8"
       }`}
     >
@@ -42,7 +42,7 @@ const Header = () => {
           />
         </Link>
         {/* nav */}
-        <Nav />
+        <Nav containerStyles="hidden xl:flex items-center gap-x-8" />
         {/* nav mobile */}
         <NavMobile />
         {/* menu button */}
