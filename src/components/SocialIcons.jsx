@@ -29,7 +29,11 @@ const SocialIcons = ({ containerStyles, iconStyles }) => {
   return (
     <div className={`${containerStyles}`}>
       {socials.map((item, index) => {
-        return <Link href={item.path}>{item.icon}</Link>;
+        return (
+          <Link href={item.path} key={index}>
+            <div className={`${iconStyles}`}>{item.icon}</div>
+          </Link>
+        );
       })}
     </div>
   );
