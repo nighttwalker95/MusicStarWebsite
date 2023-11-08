@@ -105,7 +105,7 @@ const Hero = () => {
             <div className=" hidden xl:flex items-center xl:gap-x-0">
               <div>World</div>
               <div className=" relative w-2 h-2 mx-2 flex items-center justify-center">
-                <Image src={"/assets/hero/dot.svg"} fill alt />
+                <Image src={"/assets/hero/dot.svg"} fill alt="" />
               </div>
               <div>Tour</div>
               <div className=" relative w-2 h-2 mx-2 flex items-center justify-center">
