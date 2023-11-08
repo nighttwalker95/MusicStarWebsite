@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
 import NavMobile from "./NavMobile";
 import Nav from "./Nav";
+import MenuBtn from "./MenuBtn";
 
 const Header = () => {
   const [active, setActive] = useState(false);
@@ -46,7 +47,9 @@ const Header = () => {
         {/* nav mobile */}
         <NavMobile />
         {/* menu button */}
-        <div>menu btn</div>
+        <div className=" absolute right-7">
+          <MenuBtn />
+        </div>
         {/* socials */}
         <div>social icons</div>
       </div>
