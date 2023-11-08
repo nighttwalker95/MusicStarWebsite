@@ -47,7 +47,7 @@ const Header = () => {
         {/* nav mobile */}
         <NavMobile />
         {/* menu button */}
-        <div className=" absolute right-7">
+        <div className=" absolute right-7 top-9 z-10 xl:hidden">
           <MenuBtn />
         </div>
         {/* socials */}
