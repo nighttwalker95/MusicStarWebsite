@@ -109,7 +109,7 @@ const Hero = () => {
               </div>
               <div>Tour</div>
               <div className=" relative w-2 h-2 mx-2 flex items-center justify-center">
-                <Image src={"/assets/hero/dot.svg"} fill alt />
+                <Image src={"/assets/hero/dot.svg"} fill alt="" />
               </div>
               <div>2023</div>
             </div>
