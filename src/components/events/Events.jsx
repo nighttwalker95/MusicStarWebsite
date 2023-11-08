@@ -1,5 +1,5 @@
 import EventBox from "./EventBox";
-import SectionHeader from "./SectionHeader";
+import SectionHeader from "../SectionHeader";
 
 const getEvents = async () => {
   const response = await fetch("http://localhost:4000/events");
