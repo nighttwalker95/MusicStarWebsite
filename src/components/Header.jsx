@@ -52,7 +52,10 @@ const Header = () => {
           <MenuBtn />
         </div>
         {/* socials */}
-        <SocialIcons />
+        <SocialIcons
+          containerStyles="flex text-[24px] gap-x-4"
+          iconStyles="hover:text-accent transition-all"
+        />
       </div>
     </header>
   );
