@@ -14,6 +14,8 @@ import "swiper/css/pagination";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const AlbumSlider = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
   const { data, error } = useSWR("http://localhost:4000/albums", fetcher);
 
   if (error) return "Failed to fetch data.";
@@ -22,7 +24,24 @@ const AlbumSlider = () => {
   return (
     <>
       {/* top slider */}
-      <Swiper>
+      <Swiper
+        effect={"coverflow"}
+        speed={1000}
+        spaceBetween={80}
+        allowTouchMove={false}
+        thumbs={{
+          swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+        }}
+        modules={[FreeMode, Navigation, Thumbs, EffectCoverflow]}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        className="album-slider"
+      >
         {data.map((album) => {
           return (
             <SwiperSlide key={album.id} className="mb-12 ">
@@ -83,7 +102,57 @@ const AlbumSlider = () => {
         })}
       </Swiper>
       {/* thumb slider */}
-      <Swiper>top slider</Swiper>
+      <Swiper
+        onSwiper={setThumbsSwiper}
+        breakpoints={{
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          425: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          1310: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
+        }}
+        modules={[FreeMode, Navigation, Thumbs]}
+        spaceBetween={20}
+        slidesPerView={5}
+        freeMode={true}
+        watchSlidesProgress={true}
+        className="thumb-slider"
+      >
+        {data?.map((thumb, index) => {
+          return (
+            <SwiperSlide
+              key={index}
+              className="relative group overflow-hidden border-2 border-transparent w-[254px] rounded-[10px]"
+            >
+              {/* image */}
+              <div className="relative w-[195px] h-[195px] sm:w-[360px] sm:h-[360px] md:w-[240px] md:max-h-[240px] cursor-pointer">
+                <Image
+                  src={thumb.img}
+                  fill
+                  priority
+                  alt=""
+                  className="object-contain transition-all duration-300 group-hover:scale-105"
+                />
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </>
   );
 };
