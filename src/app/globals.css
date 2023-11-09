@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-primary font-montserrat text-white;
+  @apply text-white bg-primary font-montserrat;
 }
 
 .pretitle {
@@ -15,7 +15,7 @@ body {
 }
 
 .btn {
-  @apply w-full rounded-full cursor-pointer transition-all flex justify-center items-center font-medium;
+  @apply flex items-center justify-center w-full font-medium transition-all rounded-full cursor-pointer;
 }
 
 .btn-sm {
@@ -27,7 +27,7 @@ body {
 }
 
 .btn-accent {
-  @apply bg-accent text-white hover:bg-accent-hover;
+  @apply text-white bg-accent hover:bg-accent-hover;
 }
 
 .btn-white {
@@ -96,4 +96,25 @@ body {
 
 .active {
   @apply border-b-2 border-accent;
+}
+
+/* album slider */
+.album-slider .rap-container .rap-volume .rap-volume-controls {
+  @apply !bg-accent;
+}
+
+.album-slider .rap-container .rap-slider {
+  @apply !bg-primary/40;
+}
+
+.album-slider .rap-container .rap-slider .rap-progress {
+  @apply !bg-white;
+}
+
+.album-slider .rap-container .rap-pp-button svg {
+  @apply w-[12px];
+}
+
+.album-slider .rap-container .rap-volume .rap-volume-btn svg {
+  @apply w-[20px];
 }
