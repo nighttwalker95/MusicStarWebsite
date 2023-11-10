@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-scroll";
+import { NavContext } from "../context/NavContext";
 
 const links = [
   {
@@ -15,12 +17,18 @@ const links = [
     name: "Discography",
   },
   {
+    path: "blog",
+    name: "Blog",
+  },
+  {
     path: "contact",
     name: "Contact",
   },
 ];
 
 const Nav = ({ containerStyles, linkStyles }) => {
+  const { setIsOpen } = useContext(NavContext);
+
   const isDesktop = useMediaQuery({
     query: "(min-width: 1310px)",
   });
@@ -37,6 +45,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
             spy
             offset={-50}
             activeClass="active"
+            onClick={() => setIsOpen(false)}
           >
             {link.name}
           </Link>
