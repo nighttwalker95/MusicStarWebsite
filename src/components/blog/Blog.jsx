@@ -13,6 +13,8 @@ const Blog = async () => {
     <section className="section" id="blog">
       <div className="container mx-auto">
         <SectionHeader pretitle="Our Blog" title="Latest News" />
+        {/* post list */}
+        <PostList posts={posts} />
       </div>
     </section>
   );
